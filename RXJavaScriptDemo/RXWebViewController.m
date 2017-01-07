@@ -51,10 +51,41 @@
     return YES;
 }
 
+
+
+
+- (NSString *)getHtmlCode {
+    NSString * htmlCode = @"";
+    /*
+    <html>
+    <title>HTML</title>
+    <style type="text/css">
+    <!--
+    .STYLE1 {
+        font-family: "宋体";
+        font-size: 4;
+    }
+    .body1{text-decoration: underline;}
+    -->
+    </style>
+    </head>
+    
+    <body>
+    <p class="STYLE1"><strong>我</strong>    <em>的</em><strong><font class="body1">第</font></strong><br />一个HTML程序
+    </p>
+     <input type="submit">tijiao</input>
+    </body>
+    </html>
+     */
+    return htmlCode;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 @end
