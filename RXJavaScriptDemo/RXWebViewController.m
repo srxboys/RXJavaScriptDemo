@@ -45,7 +45,7 @@
     label1.text = @"没有注入的 html";
     [self.view addSubview:label1];
     
-    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(halfW, top, halfW, 10)];
+    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(halfW, top, halfW, 14)];
     label2.font = [UIFont systemFontOfSize:14];
     label2.backgroundColor = [UIColor grayColor];
     label2.textColor = [UIColor whiteColor];
