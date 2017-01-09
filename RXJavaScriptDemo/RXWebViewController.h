@@ -18,9 +18,31 @@
 #define NavHeight     64
 #define TabbarHeight  49
 
+typedef NS_ENUM(NSInteger, HTMLType) {
+    HTMLTypeOne,
+    HTMLTypeTwo,
+    HTMLTypeThree,
+    HTMLTypeForth
+};
+
 
 @interface RXWebViewController : UIViewController <UIWebViewDelegate>
 
 @property (nonatomic, copy) UIWebView * webView;
 @property (nonatomic, copy) NSString * link;
+
+/// 设置加载本地哪个html
+- (void)settingHtmlLocalCodeWithType:(HTMLType)type;
+
+/// 显示html 源码
+- (void)printHtmlSourceCode;
+
+
+/*
+    有很多代码都重复了，只是为了，更好的理解
+    
+    能够快速入手
+ 
+ */
+
 @end

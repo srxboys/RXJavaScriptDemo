@@ -5,6 +5,7 @@
 //  Created by srx on 2017/1/7.
 //  Copyright © 2017年 https://github.com/srxboys. All rights reserved.
 //
+//iOS 拦截js function
 
 #import "RXJS1ViewController.h"
 
@@ -20,11 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self settingHtmlLocalCodeWithType:HTMLTypeOne];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     _jsContext = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    _jsContext[@"function方法名"] =  ^(id obj){
+    _jsContext[@"share"] =  ^(id obj){
         NSLog(@"js_result=%@" ,obj);
     };
 }

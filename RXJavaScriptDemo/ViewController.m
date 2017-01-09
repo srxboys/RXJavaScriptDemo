@@ -8,7 +8,29 @@
 
 #import "ViewController.h"
 
+#import "RXJS1ViewController.h"
+#import "RXRequstHtmlViewController.h"
+#import "RXJSToHtmlViewController.h"
+#import "RXJSToHtmlBlockViewController.h"
+
 @interface ViewController ()
+
+///iOS 拦截js function
+@property (weak, nonatomic) IBOutlet UIButton *interceptJSButton;
+- (IBAction)interceptJSButtonClick:(id)sender;
+
+///iOS 代理获取webView的href(html click)
+@property (weak, nonatomic) IBOutlet UIButton *htmlDelegateButton;
+- (IBAction)htmlDelegateButtonClick:(id)sender;
+
+///iOS 往html里注入js,再去截取方法的调用
+@property (weak, nonatomic) IBOutlet UIButton *addJSAndInterceptButton;
+- (IBAction)addJSAndInterceptButton:(id)sender;
+
+///iOS 往html里注入js,js一旦被调用，就会回调
+@property (weak, nonatomic) IBOutlet UIButton *addJSAndBlockButton;
+- (IBAction)addJSAndBlockButtonClick:(id)sender;
+
 
 @end
 
@@ -17,6 +39,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setButtonTitleFrame:_interceptJSButton];
+    [self setButtonTitleFrame:_htmlDelegateButton];
+    [self setButtonTitleFrame:_addJSAndInterceptButton];
+    [self setButtonTitleFrame:_addJSAndBlockButton];
+}
+
+- (void)setButtonTitleFrame:(UIButton *)btn {
+    btn.titleLabel.numberOfLines = 0;
+    btn.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +56,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)interceptJSButtonClick:(id)sender {
+    RXJS1ViewController * one = [[RXJS1ViewController alloc] init];
+    [self.navigationController pushViewController:one animated:YES];
+}
+
+- (IBAction)htmlDelegateButtonClick:(id)sender {
+    RXRequstHtmlViewController * two = [[RXRequstHtmlViewController alloc] init];
+    [self.navigationController pushViewController:two animated:YES];
+}
+
+- (IBAction)addJSAndInterceptButton:(id)sender {
+    RXJSToHtmlViewController * three = [[RXJSToHtmlViewController alloc] init];
+    [self.navigationController pushViewController:three animated:YES];
+}
+
+- (IBAction)addJSAndBlockButtonClick:(id)sender {
+    RXJSToHtmlBlockViewController * fouth = [[RXJSToHtmlBlockViewController alloc] init];
+    [self.navigationController pushViewController:fouth animated:YES];
+}
 @end

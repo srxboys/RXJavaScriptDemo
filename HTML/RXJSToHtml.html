@@ -1,0 +1,30 @@
+<!-- https://github.com/srxboys -->
+<html>
+    <head>
+        <title>iOS 往html里注入js,再去截取方法的调用</title>
+        <!-- 这里是没有js方法的-->
+        <!-- 需要app 去注入-->
+    </head>
+    
+    <body>
+        <br><br><br><br><br><br>
+        <button  onclick="jsClick()"> 调用js方法 </button>
+    </body>
+</html>
+
+<script type="text/javascript">
+    function jsClick() {
+        if(app) {
+            if(app.share) {
+                app.share("dd");
+                alert("搞笑了");
+            }
+            else {
+                alert("fuck!!");
+            }
+        }
+        else {
+            alert("怎么回事");
+        }
+    }
+</script>

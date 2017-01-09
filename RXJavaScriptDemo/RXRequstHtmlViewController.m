@@ -5,6 +5,7 @@
 //  Created by srx on 2017/1/7.
 //  Copyright © 2017年 https://github.com/srxboys. All rights reserved.
 //
+//iOS 代理获取webView的href(html click)
 
 #import "RXRequstHtmlViewController.h"
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self settingHtmlLocalCodeWithType:HTMLTypeTwo];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -25,6 +26,11 @@
     NSString *scheme = [request.URL scheme];
     scheme = [scheme lowercaseString];
     //如果网页地址是 https://www.baidu.com  scheme=https
+    
+    if([scheme rangeOfString:@"share"].location != NSNotFound) {
+        NSLog(@"share 这个根据自己的情况处理");
+        return NO;
+    }
     
     if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         //如果是点击的

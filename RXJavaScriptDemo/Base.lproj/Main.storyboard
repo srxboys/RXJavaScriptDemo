@@ -1,25 +1,86 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yxV-0m-rIP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="CQG-jh-WdE">
+            <objects>
+                <navigationController id="yxV-0m-rIP" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="frq-yX-Bmb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ffd-on-Q2s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ll2-cv-kZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-870" y="199"/>
+        </scene>
+        <!--iOS <-> js-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVq-rI-GvI">
+                                <rect key="frame" x="28" y="81" width="272" height="75"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="初级:获取html里的js方法"/>
+                                <connections>
+                                    <action selector="interceptJSButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lFK-XG-IoN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwn-fm-fd3">
+                                <rect key="frame" x="28" y="164" width="272" height="84"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="初级:获取html里的&lt;href/onClick/submit&gt;方法"/>
+                                <connections>
+                                    <action selector="htmlDelegateButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aXD-Dg-N96"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-sz-xn4">
+                                <rect key="frame" x="27" y="256" width="272" height="84"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="项目(高级):获取html注入js方法并拦截"/>
+                                <connections>
+                                    <action selector="addJSAndInterceptButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9a-sW-bnS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-Ug-yO9">
+                                <rect key="frame" x="28" y="354" width="272" height="84"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="项目(高级):获取html注入js方法，并回调"/>
+                                <connections>
+                                    <action selector="addJSAndBlockButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtY-T2-8Ly"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="iOS &lt;-&gt; js" id="KJh-I3-Qwv"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="addJSAndBlockButton" destination="qaw-Ug-yO9" id="Wud-eO-doA"/>
+                        <outlet property="addJSAndInterceptButton" destination="LTJ-sz-xn4" id="gjv-Le-85i"/>
+                        <outlet property="htmlDelegateButton" destination="Vwn-fm-fd3" id="hdM-1b-daf"/>
+                        <outlet property="interceptJSButton" destination="EVq-rI-GvI" id="P9m-lM-CAP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-496" y="199"/>
         </scene>
     </scenes>
 </document>

@@ -20,17 +20,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, NavHeight, ScreenWidth, ScreenHeight - NavHeight)];
-    self.webView.scalesPageToFit = YES;
-    self.webView.delegate = self;
-    self.webView.backgroundColor = [UIColor lightTextColor];
-    self.webView.scrollView.bounces = NO;
-    [self.view addSubview:self.webView];
+    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, NavHeight, ScreenWidth, ScreenHeight - NavHeight)];
+    _webView.scalesPageToFit = YES;
+    _webView.delegate = self;
+    _webView.backgroundColor = [UIColor lightTextColor];
+    _webView.scrollView.bounces = NO;
+    [self.view addSubview:_webView];
     
-    self.link = @"http://www.baidu.com";
-    
-    //加载 web
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.link]]];
+//    self.link = @"http://www.baidu.com";
+//    
+//    //加载 web
+//    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.link]]];
     
 }
 
@@ -42,42 +42,50 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     //加载结束
     NSLog(@"加载结束");
+    
+    [self printHtmlSourceCode];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"加载失败:%@", error.description);
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    // 加载什么网址
+    // 将要加载什么网址
     // 控制 是否让web请求1
     NSLog(@"LoadWithRequest--scheme=%@\nURL=%@\n\n", request.URL.scheme, request.URL.absoluteString);
     return YES;
 }
 
-
-
-
-- (NSString *)getHtmlCode {
+#pragma mark - ~~~~~~~~~~~ /// 设置加载本地哪个html ~~~~~~~~~~~~~~~
+- (void)settingHtmlLocalCodeWithType:(HTMLType)type {
     NSString * htmlCode = @"";
-    /*
-    <html>
-    <title>HTML</title>
-    <style type="text/css">
-    <!--
-    .STYLE1 {
-        font-family: "宋体";
-        font-size: 4;
+    if(type == HTMLTypeOne) {
+        htmlCode = @"RXJS1HTML";
     }
-    .body1{text-decoration: underline;}
-    -->
-    </style>
-    </head>
+    else if(type == HTMLTypeTwo) {
+        htmlCode = @"RXRequst";
+    }
+    else if(type == HTMLTypeThree) {
+        htmlCode = @"RXJSToHtml";
+    }
+    else {
+        htmlCode = @"RXJSToHtmlBlock";
+    }
     
-    <body>
-    <p class="STYLE1"><strong>我</strong>    <em>的</em><strong><font class="body1">第</font></strong><br />一个HTML程序
-    </p>
-     <input type="submit">tijiao</input>
-    </body>
-    </html>
-     */
-    return htmlCode;
+    NSString * htmlPath = [[NSBundle mainBundle] pathForResource:htmlCode ofType:@"html"];NSString * htmlCont = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];    // 获取当前应用的根目录
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+    // 通过baseURL的方式加载的HTML
+    // 可以在HTML内通过相对目录的方式加载js,css,img等文件
+    [_webView loadHTMLString:htmlCont baseURL:baseURL];
+}
+
+#pragma mark - ~~~~~~~~~~~ /// 显示html 源码 ~~~~~~~~~~~~~~~
+- (void)printHtmlSourceCode {
+    NSString *jsToGetHTMLSource = @"document.getElementsByTagName('html')[0].innerHTML";
+    NSString *HTMLSource = [self.webView stringByEvaluatingJavaScriptFromString:jsToGetHTMLSource];
+    NSLog(@"%@",HTMLSource);
 }
 
 - (void)didReceiveMemoryWarning {

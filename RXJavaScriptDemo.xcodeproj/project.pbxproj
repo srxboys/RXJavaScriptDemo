@@ -18,6 +18,11 @@
 		6C29B37E1E209DF0009F6C6B /* RXJSToHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B37D1E209DF0009F6C6B /* RXJSToHtmlViewController.m */; };
 		6C29B3811E209E1C009F6C6B /* RXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B3801E209E1C009F6C6B /* RXWebViewController.m */; };
 		6C29B3841E20A172009F6C6B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C29B3831E20A172009F6C6B /* JavaScriptCore.framework */; };
+		6CB356471E233469004460D6 /* RXJSToHtmlBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB356461E233469004460D6 /* RXJSToHtmlBlockViewController.m */; };
+		6CB3564D1E233BEB004460D6 /* RXRequst.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3564C1E233BEB004460D6 /* RXRequst.html */; };
+		6CB3564F1E233BF9004460D6 /* RXJSToHtml.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3564E1E233BF9004460D6 /* RXJSToHtml.html */; };
+		6CB356511E233C18004460D6 /* RXJSToHtmlBlock.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB356501E233C18004460D6 /* RXJSToHtmlBlock.html */; };
+		6CB356531E233C56004460D6 /* RXJS1HTML.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB356521E233C56004460D6 /* RXJS1HTML.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,12 @@
 		6C29B37F1E209E1C009F6C6B /* RXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXWebViewController.h; sourceTree = "<group>"; };
 		6C29B3801E209E1C009F6C6B /* RXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXWebViewController.m; sourceTree = "<group>"; };
 		6C29B3831E20A172009F6C6B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		6CB356451E233469004460D6 /* RXJSToHtmlBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXJSToHtmlBlockViewController.h; sourceTree = "<group>"; };
+		6CB356461E233469004460D6 /* RXJSToHtmlBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXJSToHtmlBlockViewController.m; sourceTree = "<group>"; };
+		6CB3564C1E233BEB004460D6 /* RXRequst.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXRequst.html; sourceTree = "<group>"; };
+		6CB3564E1E233BF9004460D6 /* RXJSToHtml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXJSToHtml.html; sourceTree = "<group>"; };
+		6CB356501E233C18004460D6 /* RXJSToHtmlBlock.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXJSToHtmlBlock.html; sourceTree = "<group>"; };
+		6CB356521E233C56004460D6 /* RXJS1HTML.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXJS1HTML.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,7 @@
 		6C29B3531E209D77009F6C6B = {
 			isa = PBXGroup;
 			children = (
+				6CB356491E233B64004460D6 /* HTML */,
 				6C29B3821E20A167009F6C6B /* Frameworks */,
 				6C29B35E1E209D77009F6C6B /* RXJavaScriptDemo */,
 				6C29B35D1E209D77009F6C6B /* Products */,
@@ -87,6 +99,8 @@
 				6C29B37A1E209DDA009F6C6B /* RXRequstHtmlViewController.m */,
 				6C29B37C1E209DF0009F6C6B /* RXJSToHtmlViewController.h */,
 				6C29B37D1E209DF0009F6C6B /* RXJSToHtmlViewController.m */,
+				6CB356451E233469004460D6 /* RXJSToHtmlBlockViewController.h */,
+				6CB356461E233469004460D6 /* RXJSToHtmlBlockViewController.m */,
 				6C29B36B1E209D77009F6C6B /* Assets.xcassets */,
 				6C29B36D1E209D77009F6C6B /* LaunchScreen.storyboard */,
 				6C29B3701E209D77009F6C6B /* Info.plist */,
@@ -109,6 +123,17 @@
 				6C29B3831E20A172009F6C6B /* JavaScriptCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CB356491E233B64004460D6 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				6CB356521E233C56004460D6 /* RXJS1HTML.html */,
+				6CB3564C1E233BEB004460D6 /* RXRequst.html */,
+				6CB3564E1E233BF9004460D6 /* RXJSToHtml.html */,
+				6CB356501E233C18004460D6 /* RXJSToHtmlBlock.html */,
+			);
+			path = HTML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +195,11 @@
 			files = (
 				6C29B36F1E209D77009F6C6B /* LaunchScreen.storyboard in Resources */,
 				6C29B36C1E209D77009F6C6B /* Assets.xcassets in Resources */,
+				6CB3564D1E233BEB004460D6 /* RXRequst.html in Resources */,
+				6CB3564F1E233BF9004460D6 /* RXJSToHtml.html in Resources */,
 				6C29B36A1E209D77009F6C6B /* Main.storyboard in Resources */,
+				6CB356531E233C56004460D6 /* RXJS1HTML.html in Resources */,
+				6CB356511E233C18004460D6 /* RXJSToHtmlBlock.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +213,7 @@
 				6C29B3671E209D77009F6C6B /* ViewController.m in Sources */,
 				6C29B37E1E209DF0009F6C6B /* RXJSToHtmlViewController.m in Sources */,
 				6C29B3641E209D77009F6C6B /* AppDelegate.m in Sources */,
+				6CB356471E233469004460D6 /* RXJSToHtmlBlockViewController.m in Sources */,
 				6C29B3611E209D77009F6C6B /* main.m in Sources */,
 				6C29B3781E209DAB009F6C6B /* RXJS1ViewController.m in Sources */,
 				6C29B37B1E209DDA009F6C6B /* RXRequstHtmlViewController.m in Sources */,
