@@ -7,7 +7,11 @@
 //
 //iOS 往html里注入js,js一旦被调用，就会回调
 
+//参考 : https://www.bignerdranch.com/blog/javascriptcore-example/
+
 #import "RXJSToHtmlBlockViewController.h"
+
+#import <JavaScriptCore/JavaScriptCore.h>
 
 @interface RXJSToHtmlBlockViewController ()
 
@@ -25,14 +29,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

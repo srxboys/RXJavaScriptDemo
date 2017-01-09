@@ -7,6 +7,8 @@
 //
 //iOS 往html里注入js,再去截取方法的调用
 
+//参考 apple文档
+
 #import "RXJSToHtmlViewController.h"
 
 #import <JavaScriptCore/JavaScriptCore.h>
@@ -35,10 +37,10 @@
     __weak typeof(self)weakSelf = self;
     JSValue * app = [_jsContext objectForKeyedSubscript:@"app"];
     app[@"share"] = ^(id obj){
-        NSLog(@"高级处理方法");
+        NSLog(@"高级处理方法1");
         [weakSelf webShare:obj];
     };
-    
+
     [self printHtmlSourceCode];
 }
 
