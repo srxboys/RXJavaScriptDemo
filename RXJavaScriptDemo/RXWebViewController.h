@@ -31,11 +31,10 @@ typedef NS_ENUM(NSInteger, HTMLType) {
 @property (nonatomic, copy) UIWebView * webView;
 @property (nonatomic, copy) NSString * link;
 
+- (void)addJSAlterPrint;
+
 /// 设置加载本地哪个html
 - (void)settingHtmlLocalCodeWithType:(HTMLType)type;
-
-/// 显示html 源码
-- (void)printHtmlSourceCode;
 
 
 /*

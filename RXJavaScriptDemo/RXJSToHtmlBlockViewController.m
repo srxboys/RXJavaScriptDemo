@@ -24,6 +24,11 @@
     [self settingHtmlLocalCodeWithType:HTMLTypeForth];
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [super webViewDidFinishLoad:webView];
+    [self addJSAlterPrint];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

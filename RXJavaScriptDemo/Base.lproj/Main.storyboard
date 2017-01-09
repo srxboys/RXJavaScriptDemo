@@ -34,33 +34,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVq-rI-GvI">
-                                <rect key="frame" x="28" y="81" width="272" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVq-rI-GvI">
+                                <rect key="frame" x="24" y="81" width="272" height="75"/>
                                 <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="hEc-NI-hmQ"/>
+                                    <constraint firstAttribute="width" constant="272" id="x21-G2-bfO"/>
+                                </constraints>
                                 <state key="normal" title="初级:获取html里的js方法"/>
                                 <connections>
                                     <action selector="interceptJSButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lFK-XG-IoN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwn-fm-fd3">
-                                <rect key="frame" x="28" y="164" width="272" height="84"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwn-fm-fd3">
+                                <rect key="frame" x="24" y="164" width="272" height="84"/>
                                 <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="HVz-Lc-mnt"/>
+                                    <constraint firstAttribute="width" constant="272" id="agj-Ed-IMK"/>
+                                </constraints>
                                 <state key="normal" title="初级:获取html里的&lt;href/onClick/submit&gt;方法"/>
                                 <connections>
                                     <action selector="htmlDelegateButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aXD-Dg-N96"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-sz-xn4">
-                                <rect key="frame" x="27" y="256" width="272" height="84"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-sz-xn4">
+                                <rect key="frame" x="24" y="256" width="272" height="84"/>
                                 <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="ZXO-uV-mpl"/>
+                                    <constraint firstAttribute="width" constant="272" id="ao7-ER-Foq"/>
+                                </constraints>
                                 <state key="normal" title="项目(高级):获取html注入js方法并拦截"/>
                                 <connections>
                                     <action selector="addJSAndInterceptButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9a-sW-bnS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-Ug-yO9">
-                                <rect key="frame" x="28" y="354" width="272" height="84"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-Ug-yO9">
+                                <rect key="frame" x="24" y="354" width="272" height="84"/>
                                 <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="dGq-Eh-62X"/>
+                                    <constraint firstAttribute="height" constant="84" id="rD5-oc-6l9"/>
+                                </constraints>
                                 <state key="normal" title="项目(高级):获取html注入js方法，并回调"/>
                                 <connections>
                                     <action selector="addJSAndBlockButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtY-T2-8Ly"/>
@@ -68,6 +84,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LTJ-sz-xn4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ibf-Oq-hoT"/>
+                            <constraint firstItem="Vwn-fm-fd3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JaA-1N-hNg"/>
+                            <constraint firstItem="EVq-rI-GvI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sq0-aU-n2H"/>
+                            <constraint firstItem="EVq-rI-GvI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="eT3-gd-GVJ"/>
+                            <constraint firstItem="Vwn-fm-fd3" firstAttribute="top" secondItem="EVq-rI-GvI" secondAttribute="bottom" constant="8" id="geR-TY-58g"/>
+                            <constraint firstItem="qaw-Ug-yO9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tXm-N6-hK5"/>
+                            <constraint firstItem="qaw-Ug-yO9" firstAttribute="top" secondItem="LTJ-sz-xn4" secondAttribute="bottom" constant="14" id="uJ6-gL-UYp"/>
+                            <constraint firstItem="LTJ-sz-xn4" firstAttribute="top" secondItem="Vwn-fm-fd3" secondAttribute="bottom" constant="8" id="uUq-mf-cb5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="iOS &lt;-&gt; js" id="KJh-I3-Qwv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

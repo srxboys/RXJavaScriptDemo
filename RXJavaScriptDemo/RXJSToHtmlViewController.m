@@ -27,6 +27,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [super webViewDidFinishLoad:webView];
     
     //注入js 方法
     [self addJavaScriptName:@"share"];
@@ -37,18 +38,20 @@
     __weak typeof(self)weakSelf = self;
     JSValue * app = [_jsContext objectForKeyedSubscript:@"app"];
     app[@"share"] = ^(id obj){
-        NSLog(@"高级处理方法1");
         [weakSelf webShare:obj];
     };
 
-    [self printHtmlSourceCode];
+    [self addJSAlterPrint];
 }
 
 - (void)webShare:(id)obj {
     NSData *data = [(NSString *)obj dataUsingEncoding:NSUTF8StringEncoding ];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    //上面是对json的处理
     
-    //在根据自己的
+    
+    //对象、变量的 处理
+    NSLog(@"obj=%@", obj);
 }
 
 - (void)addJavaScriptName:(NSString *)functionName {

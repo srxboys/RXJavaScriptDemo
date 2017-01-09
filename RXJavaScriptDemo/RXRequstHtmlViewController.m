@@ -21,7 +21,7 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    
+    [super webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
     
     NSString *scheme = [request.URL scheme];
     scheme = [scheme lowercaseString];
@@ -53,6 +53,11 @@
     }
     
     return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [super webViewDidFinishLoad:webView];
+    [self addJSAlterPrint];
 }
 
 - (void)didReceiveMemoryWarning {

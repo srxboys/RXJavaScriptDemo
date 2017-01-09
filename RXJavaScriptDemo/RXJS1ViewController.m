@@ -26,10 +26,14 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [super webViewDidFinishLoad:webView];
+    
     _jsContext = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     _jsContext[@"share"] =  ^(id obj){
         NSLog(@"js_result=%@" ,obj);
     };
+    
+    [self addJSAlterPrint];
 }
 
 - (void)didReceiveMemoryWarning {

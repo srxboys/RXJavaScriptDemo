@@ -9,7 +9,8 @@
 #import "RXWebViewController.h"
 
 @interface RXWebViewController ()
-
+@property (nonatomic, copy) UITextView * openCodeTextView;
+@property (nonatomic, copy) UITextView * endCodeTextView;
 @end
 
 @implementation RXWebViewController
@@ -23,15 +24,47 @@
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, NavHeight, ScreenWidth, ScreenHeight - NavHeight)];
     _webView.scalesPageToFit = YES;
     _webView.delegate = self;
-    _webView.backgroundColor = [UIColor lightTextColor];
+    _webView.backgroundColor = [UIColor clearColor];
     _webView.scrollView.bounces = NO;
     [self.view addSubview:_webView];
     
-//    self.link = @"http://www.baidu.com";
-//    
-//    //加载 web
-//    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.link]]];
+    //    self.link = @"http://www.baidu.com";
+    //
+    //    //加载 web
+    //    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.link]]];
     
+    
+    
+    CGFloat halfW = ScreenWidth /2.0;
+    CGFloat top = NavHeight + 100;
+    UILabel * label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, top, halfW, 14)];
+    label1.font = [UIFont systemFontOfSize:14];
+    label1.backgroundColor = [UIColor darkGrayColor];
+    label1.textAlignment = NSTextAlignmentCenter;
+    label1.textColor = [UIColor whiteColor];
+    label1.text = @"没有注入的 html";
+    [self.view addSubview:label1];
+    
+    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(halfW, top, halfW, 10)];
+    label2.font = [UIFont systemFontOfSize:14];
+    label2.backgroundColor = [UIColor grayColor];
+    label2.textColor = [UIColor whiteColor];
+    label2.textAlignment = NSTextAlignmentCenter;
+    label2.text = @"已经注入的 html";
+    [self.view addSubview:label2];
+    top += 14 + 1;
+    
+    _openCodeTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, top, halfW - 1, ScreenHeight - top)];
+    _openCodeTextView.font = [UIFont systemFontOfSize:14];
+    _openCodeTextView.backgroundColor = [UIColor darkGrayColor];
+    _openCodeTextView.textColor = [UIColor whiteColor];
+    [self.view addSubview:_openCodeTextView];
+    
+    _endCodeTextView = [[UITextView alloc] initWithFrame:CGRectMake(halfW + 1, top, halfW - 1, ScreenHeight - top)];
+    _endCodeTextView.font = [UIFont systemFontOfSize:14];
+    _endCodeTextView.backgroundColor = [UIColor grayColor];
+    _endCodeTextView.textColor = [UIColor whiteColor];
+    [self.view addSubview:_endCodeTextView];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -43,7 +76,11 @@
     //加载结束
     NSLog(@"加载结束");
     
-    [self printHtmlSourceCode];
+   _openCodeTextView.text =  [self printHtmlSourceCode];
+}
+
+- (void)addJSAlterPrint {
+    _endCodeTextView.text = [self printHtmlSourceCode];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -82,10 +119,11 @@
 }
 
 #pragma mark - ~~~~~~~~~~~ /// 显示html 源码 ~~~~~~~~~~~~~~~
-- (void)printHtmlSourceCode {
+- (NSString *)printHtmlSourceCode {
     NSString *jsToGetHTMLSource = @"document.getElementsByTagName('html')[0].innerHTML";
     NSString *HTMLSource = [self.webView stringByEvaluatingJavaScriptFromString:jsToGetHTMLSource];
-    NSLog(@"%@",HTMLSource);
+//    NSLog(@"%@",HTMLSource);
+    return HTMLSource;
 }
 
 - (void)didReceiveMemoryWarning {
