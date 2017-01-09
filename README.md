@@ -4,7 +4,7 @@
 > #import\<JavaScriptCore/JavaScriptCore.h\>
 
 -
-```obj
+```html
 <html>
     <head>
         <script> var message = "您获取的字符串为nil,哈哈";</script>
@@ -24,7 +24,7 @@
 </html>
 ````
 
-```obj
+```html
 <html>
     <head>
         <script> var message = "iOS 往html里注入js,再去截取方法的调用";</script>
