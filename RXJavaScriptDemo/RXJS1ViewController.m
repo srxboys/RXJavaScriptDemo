@@ -33,7 +33,7 @@
         NSLog(@"js_result=%@" ,obj);
     };
     
-    [self addJSAlterPrint];
+//    [self addJSAlterPrint];
 }
 
 - (void)didReceiveMemoryWarning {

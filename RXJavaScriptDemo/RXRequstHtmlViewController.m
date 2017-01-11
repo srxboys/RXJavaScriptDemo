@@ -57,7 +57,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [super webViewDidFinishLoad:webView];
-    [self addJSAlterPrint];
+//    [self addJSAlterPrint];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -42,7 +42,7 @@
     label1.backgroundColor = [UIColor darkGrayColor];
     label1.textAlignment = NSTextAlignmentCenter;
     label1.textColor = [UIColor whiteColor];
-    label1.text = @"没有注入的 html";
+    label1.text = @"本地 html";
     [self.view addSubview:label1];
     
     UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(halfW, top, halfW, 14)];
@@ -50,7 +50,7 @@
     label2.backgroundColor = [UIColor grayColor];
     label2.textColor = [UIColor whiteColor];
     label2.textAlignment = NSTextAlignmentCenter;
-    label2.text = @"已经注入的 html";
+    label2.text = @"已经注入js的 html";
     [self.view addSubview:label2];
     top += 14 + 1;
     
@@ -58,12 +58,14 @@
     _openCodeTextView.font = [UIFont systemFontOfSize:14];
     _openCodeTextView.backgroundColor = [UIColor darkGrayColor];
     _openCodeTextView.textColor = [UIColor whiteColor];
+    _openCodeTextView.editable = NO;
     [self.view addSubview:_openCodeTextView];
     
     _endCodeTextView = [[UITextView alloc] initWithFrame:CGRectMake(halfW + 1, top, halfW - 1, ScreenHeight - top)];
     _endCodeTextView.font = [UIFont systemFontOfSize:14];
     _endCodeTextView.backgroundColor = [UIColor grayColor];
     _endCodeTextView.textColor = [UIColor whiteColor];
+    _endCodeTextView.editable = NO;
     [self.view addSubview:_endCodeTextView];
 }
 
@@ -125,6 +127,27 @@
 //    NSLog(@"%@",HTMLSource);
     return HTMLSource;
 }
+
+
+
+
+- (void) cleanCache {
+    //清除UIWebView的缓存//准确的说 是清除请求缓存
+    NSURLCache * cache = [NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+    [cache setDiskCapacity:0];
+    [cache setMemoryCapacity:0];
+}
+
+- (void)cleanCookies {
+    //清除 cookies
+    NSHTTPCookie * cookie;
+    NSHTTPCookieStorage * storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [storage cookies]) {
+        [storage deleteCookie:cookie];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

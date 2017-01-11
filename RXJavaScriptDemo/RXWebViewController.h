@@ -44,4 +44,11 @@ typedef NS_ENUM(NSInteger, HTMLType) {
  
  */
 
+
+/** 清除UIWebView的缓存//准确的说 是清除请求缓存 */
+- (void) cleanCache;
+
+/** 清除 cookies */
+- (void)cleanCookies;
+
 @end
