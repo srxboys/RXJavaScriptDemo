@@ -34,6 +34,13 @@
     };
     
 //    [self addJSAlterPrint];
+    
+    //OC调用js方法
+    NSString * result = [self.webView stringByEvaluatingJavaScriptFromString:@"returnObject()"];
+    NSLog(@"返回的结果:%@", result);
+    
+   JSValue * resultValue = [_jsContext evaluateScript:@"returnObject()"];
+    NSLog(@"resultValue=%@", resultValue);
 }
 
 - (void)didReceiveMemoryWarning {

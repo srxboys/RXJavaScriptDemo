@@ -1,12 +1,17 @@
 <!-- https://github.com/srxboys -->
 <html>
     <head>
-        <script> var message = "您获取的字符串为nil,哈哈";</script>
+        
         <title>iOS 拦截js function</title>
         <script type="text/javascript">
-            function share(var varCharInfo) {
+            var message = "您获取的字符串为nil,哈哈";
+            function share(message) {
                 //其实iOS已经拦截，就不会走下面的alert
-                alert("该提示框是通过 onload 事件调用的。" + varCharInfo)
+                alert("该提示框是通过 onload 事件调用的。");
+            }
+        
+            function returnObject() {
+                return "abc123";
             }
         </script>
     </head>
