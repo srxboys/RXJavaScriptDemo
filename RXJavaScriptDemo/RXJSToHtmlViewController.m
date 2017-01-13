@@ -92,7 +92,6 @@
     }
     
     NSString * jsString = [NSString stringWithFormat:@"var script = document.createElement('script');"
-                           "script.id = '1';"
                            "%@"
                            "script.text = \"app.%@ = function() {};\";"
                            //定义myFunction方法
