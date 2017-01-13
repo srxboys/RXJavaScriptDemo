@@ -1,6 +1,7 @@
 # RXJavaScriptDemo
 
 ## iOS app的webView 与 js 交互
+> 简单易懂， 包活学活用哦！:sweat_smile:
 > #import\<JavaScriptCore/JavaScriptCore.h\>
 
 -
