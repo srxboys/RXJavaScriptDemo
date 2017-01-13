@@ -52,6 +52,8 @@
     
     //对象、变量的 处理
     NSLog(@"obj=%@", obj);
+    
+    //看html 给你什么类型了
 }
 
 - (void)addJavaScriptName:(NSString *)functionName {
@@ -61,11 +63,45 @@
                            "script.text = \"var app = {}; app.%@ = function() {};\";"
                            //定义myFunction方法
                            "document.getElementsByTagName('head')[0].appendChild(script);", functionName];
-    NSString * jsFunction = [NSString stringWithFormat:@"%@();", functionName];
     
     [self.webView stringByEvaluatingJavaScriptFromString:jsString];
-    [self.webView stringByEvaluatingJavaScriptFromString:jsFunction
-     ];
+    
+    //iOS app 去掉用js html里的js方法(一般不用)
+//    NSString * jsFunction = [NSString stringWithFormat:@"%@();", functionName];
+//    [self.webView stringByEvaluatingJavaScriptFromString:jsFunction];
+}
+
+
+//---------------------------
+//---------------------------
+//---------------------------
+//这个和本页面无关
+//1、如果你的app html设计到统计，已进入(self.webView loadReques..)，就需要app马上接收..值
+//        我会在js 注入<js标签 id = "injectionJSEND"> 告诉html我注入完了，发给我要的值吧！
+//2、然后在用上面的 拦截js方法就好了
+/**
+ *  注入js
+ *  @param functionName    注入的方法名
+ *  @param isLastInjection 是否是最后注入，并注入id ，告诉html我注入完毕
+ */
+- (void)addJavaScriptName:(NSString *)functionName isLastInjection:(BOOL)isLastInjection {
+    
+    NSString * scriptId = @"";
+    if(isLastInjection) {
+        scriptId = @"script.id = 'injectionJSEND';";
+    }
+    
+    NSString * jsString = [NSString stringWithFormat:@"var script = document.createElement('script');"
+                           "script.id = '1';"
+                           "%@"
+                           "script.text = \"app.%@ = function() {};\";"
+                           //定义myFunction方法
+                           "document.getElementsByTagName('head')[0].appendChild(script);", scriptId,   functionName];
+    [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+    
+    //iOS app 去掉用js html里的js方法(一般不用)
+    //    NSString * jsFunction = [NSString stringWithFormat:@"%@();", functionName];
+    //    [self.webView stringByEvaluatingJavaScriptFromString:jsFunction];
 }
 
 - (void)didReceiveMemoryWarning {
