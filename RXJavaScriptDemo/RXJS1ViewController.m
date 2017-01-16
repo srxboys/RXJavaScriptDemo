@@ -41,6 +41,9 @@
     
    JSValue * resultValue = [_jsContext evaluateScript:@"returnObject()"];
     NSLog(@"resultValue=%@", resultValue);
+    
+    NSString * resultSession = [self.webView stringByEvaluatingJavaScriptFromString:@"sendSessionID()"];
+    NSLog(@"resultSession = %@", resultSession);
 }
 
 - (void)didReceiveMemoryWarning {
