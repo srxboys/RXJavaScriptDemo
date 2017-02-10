@@ -3,9 +3,13 @@
     <head>
         
         <title>iOS 拦截js function</title>
-        <!--  函数里需要返回全局变量 -->
+        <!--  函数里需要返回全局变量 1 -->
          <script> var sessionid = "srxboys000007"; </script>
-        
+         
+         <!--  函数里需要返回全局变量 2 -->
+        <script type="text/javascript">
+            var srxboysVar = "1234567890";
+        </script>
         
         <script type="text/javascript">
             var message = "您获取的字符串为nil,哈哈";
@@ -21,7 +25,8 @@
         
         <script type="text/javascript">
             function sendSessionID() {
-                return sessionid;
+                return srxboysVar;
+                //return sessionid;
             }
         </script>
     </head>

@@ -82,11 +82,25 @@
                                     <action selector="addJSAndBlockButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtY-T2-8Ly"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-PV-Q7m">
+                                <rect key="frame" x="24" y="453" width="272" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="Lok-Iw-Qji"/>
+                                    <constraint firstAttribute="height" constant="20" id="e60-M2-5pT"/>
+                                </constraints>
+                                <state key="normal" title="wx+js"/>
+                                <connections>
+                                    <action selector="wkwebJSButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SA5-d5-nNk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vw3-PV-Q7m" firstAttribute="top" secondItem="qaw-Ug-yO9" secondAttribute="bottom" constant="15" id="2IX-jg-vIm"/>
                             <constraint firstItem="LTJ-sz-xn4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ibf-Oq-hoT"/>
                             <constraint firstItem="Vwn-fm-fd3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JaA-1N-hNg"/>
+                            <constraint firstItem="vw3-PV-Q7m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PTd-Vy-Ma9"/>
                             <constraint firstItem="EVq-rI-GvI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sq0-aU-n2H"/>
                             <constraint firstItem="EVq-rI-GvI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="eT3-gd-GVJ"/>
                             <constraint firstItem="Vwn-fm-fd3" firstAttribute="top" secondItem="EVq-rI-GvI" secondAttribute="bottom" constant="8" id="geR-TY-58g"/>
@@ -102,6 +116,7 @@
                         <outlet property="addJSAndInterceptButton" destination="LTJ-sz-xn4" id="gjv-Le-85i"/>
                         <outlet property="htmlDelegateButton" destination="Vwn-fm-fd3" id="hdM-1b-daf"/>
                         <outlet property="interceptJSButton" destination="EVq-rI-GvI" id="P9m-lM-CAP"/>
+                        <outlet property="wkwebJSButton" destination="vw3-PV-Q7m" id="XF0-mn-Sf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

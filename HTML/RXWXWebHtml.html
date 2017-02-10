@@ -1,0 +1,30 @@
+<!-- https://github.com/srxboys -->
+<!-- 设备 >= iOS8 -->
+<html>
+    <head>
+        <title>iOS 往html里注入js,再去截取方法的调用</title>
+        <!-- 这里是没有js方法的-->
+        <!-- 需要app 去注入-->
+        <!-- WXWeb注入了，源码也是看不到的 -->
+    </head>
+    
+    <body onload="loading()">
+        <br><br><br><br><br><br>
+        <button class="b" onclick="jsClick()"> 调用js方法 </button>
+    </body>
+</html>
+
+<script type="text/javascript">
+    function jsClick() {
+        window.webkit.messageHandlers.share.postMessage({body: 'call js confirm in js'});
+    }
+</script>
+
+
+
+<!-- 当加载时执行 并app获取 -->
+<script type=text/javascript defer>
+    function loading(){
+      window.webkit.messageHandlers.loadHtml.postMessage({body: '2222'});
+    }
+</script>

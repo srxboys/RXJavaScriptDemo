@@ -6,12 +6,20 @@
 //  Copyright © 2017年 https://github.com/srxboys. All rights reserved.
 //
 
+#define SYSTEMVERSION   [UIDevice currentDevice].systemVersion
+
+//大于多少版本
+#define iOS7OrLater ([SYSTEMVERSION floatValue] >= 7.0)
+#define iOS8OrLater ([SYSTEMVERSION floatValue] >= 8.0)
+#define iOS9OrLater ([SYSTEMVERSION floatValue] >= 9.0)
+
 #import "ViewController.h"
 
 #import "RXJS1ViewController.h"
 #import "RXRequstHtmlViewController.h"
 #import "RXJSToHtmlViewController.h"
 #import "RXJSToHtmlBlockViewController.h"
+#import "RXWXWebJSViewController.h"
 
 @interface ViewController ()
 
@@ -32,6 +40,8 @@
 - (IBAction)addJSAndBlockButtonClick:(id)sender;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *wkwebJSButton;
+- (IBAction)wkwebJSButtonClick:(id)sender;
 @end
 
 @implementation ViewController
@@ -44,6 +54,10 @@
     [self setButtonTitleFrame:_htmlDelegateButton];
     [self setButtonTitleFrame:_addJSAndInterceptButton];
     [self setButtonTitleFrame:_addJSAndBlockButton];
+    if(!iOS8OrLater) {
+        _wkwebJSButton.hidden = YES;
+    }
+    
 }
 
 - (void)setButtonTitleFrame:(UIButton *)btn {
@@ -74,5 +88,10 @@
 - (IBAction)addJSAndBlockButtonClick:(id)sender {
     RXJSToHtmlBlockViewController * fouth = [[RXJSToHtmlBlockViewController alloc] init];
     [self.navigationController pushViewController:fouth animated:YES];
+}
+
+- (IBAction)wkwebJSButtonClick:(id)sender {
+    RXWXWebJSViewController * five = [[RXWXWebJSViewController alloc] init];
+    [self.navigationController pushViewController:five animated:YES];
 }
 @end
