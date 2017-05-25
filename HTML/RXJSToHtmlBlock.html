@@ -4,19 +4,52 @@
         <title>iOS 往html里注入js,再去截取方法的调用</title>
         <!-- 这里是没有js方法的-->
         <!-- 需要app 去注入-->
+        <style>
+            .button{
+                width: 140px;
+                line-height: 38px;
+                text-align: center;
+                font-weight: bold;
+                color: #8c96a0;
+                text-shadow:1px 1px 1px #333;
+                border-radius: 5px;
+                margin:0 20px 20px 0;
+                position: relative;
+                overflow: hidden;
+                background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
+                background: -moz-linear-gradient(top,#f2f3f7,#e4e8ec);
+                background: linear-gradient(top,#f2f3f7,#e4e8ec);
+            }
+        </style>
     </head>
     
-    <body>
+    <body onload="loading()">
         <br><br><br><br><br><br>
-        <button class="b" onclick="jsClick()"> 调用js方法 </button>
+        <button class=button onclick="jsClick()">  调用js方法  </button>
     </body>
 </html>
 
 <script type="text/javascript">
-    function jsClick() {
+    function jsClick(){
+<!--        alert("您点击了0");-->
         if(app) {
+<!--            alert("您点击了1");-->
             if(app.share) {
-                app.share();
+<!--                alert("您点击了2");-->
+                app.share("srxboys_app.share");
+            }
+        }
+    }
+</script>
+
+<script type=text/javascript defer>
+    function loading(){
+<!--        alert("loading0");-->
+        if(app) {
+<!--            alert("loading1");-->
+            if(app.londingJS) {
+<!--                alert("loading2");-->
+                app.londingJS("good job");
             }
         }
     }

@@ -18,6 +18,7 @@
 		6C29B37E1E209DF0009F6C6B /* RXJSToHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B37D1E209DF0009F6C6B /* RXJSToHtmlViewController.m */; };
 		6C29B3811E209E1C009F6C6B /* RXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B3801E209E1C009F6C6B /* RXWebViewController.m */; };
 		6C29B3841E20A172009F6C6B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C29B3831E20A172009F6C6B /* JavaScriptCore.framework */; };
+		6C6F3FEF1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F3FEE1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.m */; };
 		6C793F581E4D90E800525B33 /* RXWXWebJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C793F571E4D90E800525B33 /* RXWXWebJSViewController.m */; };
 		6C793F5A1E4D910A00525B33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C793F591E4D910A00525B33 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C793F5E1E4DA04F00525B33 /* RXWXWebHtml.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C793F5D1E4DA04F00525B33 /* RXWXWebHtml.html */; };
@@ -48,6 +49,8 @@
 		6C29B37F1E209E1C009F6C6B /* RXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXWebViewController.h; sourceTree = "<group>"; };
 		6C29B3801E209E1C009F6C6B /* RXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXWebViewController.m; sourceTree = "<group>"; };
 		6C29B3831E20A172009F6C6B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		6C6F3FED1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+TS_JavaScriptContext.h"; sourceTree = "<group>"; };
+		6C6F3FEE1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+TS_JavaScriptContext.m"; sourceTree = "<group>"; };
 		6C793F561E4D90E800525B33 /* RXWXWebJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXWXWebJSViewController.h; sourceTree = "<group>"; };
 		6C793F571E4D90E800525B33 /* RXWXWebJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXWXWebJSViewController.m; sourceTree = "<group>"; };
 		6C793F591E4D910A00525B33 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -94,6 +97,7 @@
 		6C29B35E1E209D77009F6C6B /* RXJavaScriptDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6C6F3FEC1ED67CA0006F9B9E /* webViewExtension */,
 				6C29B3621E209D77009F6C6B /* AppDelegate.h */,
 				6C29B3631E209D77009F6C6B /* AppDelegate.m */,
 				6C29B3651E209D77009F6C6B /* ViewController.h */,
@@ -134,6 +138,15 @@
 				6C29B3831E20A172009F6C6B /* JavaScriptCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C6F3FEC1ED67CA0006F9B9E /* webViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6C6F3FED1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.h */,
+				6C6F3FEE1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.m */,
+			);
+			path = webViewExtension;
 			sourceTree = "<group>";
 		};
 		6CB356491E233B64004460D6 /* HTML */ = {
@@ -231,6 +244,7 @@
 				6C29B3641E209D77009F6C6B /* AppDelegate.m in Sources */,
 				6CB356471E233469004460D6 /* RXJSToHtmlBlockViewController.m in Sources */,
 				6C29B3611E209D77009F6C6B /* main.m in Sources */,
+				6C6F3FEF1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.m in Sources */,
 				6C29B3781E209DAB009F6C6B /* RXJS1ViewController.m in Sources */,
 				6C29B37B1E209DDA009F6C6B /* RXRequstHtmlViewController.m in Sources */,
 				6C29B3811E209E1C009F6C6B /* RXWebViewController.m in Sources */,
