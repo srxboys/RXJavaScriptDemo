@@ -20,7 +20,7 @@
         alert("您点击了");
         if(app) {
             if(app.share) {
-                app.share("dd");
+<!--            app.share("dd");  这个是webView里能获取，webkit不这么写-->
                 alert("搞笑了");
             }
             else {
@@ -42,8 +42,8 @@
 <!--      window.webkit.messageHandlers.loadHtml.postMessage({body: '2222'});-->
       if(app) {
           if(app.share) {
-              app.share("londing share");
-              window.webkit.messageHandlers.share.postMessage({body: 'londing share webkit'});
+<!--        app.share("londing share"); 这个是webView里能获取，webkit不这么写-->
+            window.webkit.messageHandlers.share.postMessage({body: 'londing share webkit'});
 <!--              alert("londing share");-->
           }
           else {
@@ -58,6 +58,16 @@
 </script>
 
 <!--
+
+ app 表示，是手机端 访问的web页
+ 
+ app.share 表示 手机端去分享
+ 
+ 这样写，明确
+
+
+ ---------------------------
+ onload="loading()" 用途:
     当html 在加载时，注入js  ,,html加载完 立即本地调用 一些方法告诉app 干什么活
     例子:
         当加载html ，注入的js 是app 用户id ,,立即调用本地 看看是否登录，没有登录，立即调用方法告诉app 去登录
