@@ -55,6 +55,7 @@
     [self setButtonTitleFrame:_addJSAndInterceptButton];
     [self setButtonTitleFrame:_addJSAndBlockButton];
     if(!iOS8OrLater) {
+        NSLog(@"当前设备小于iOS8系统，不能用WKWebView");
         _wkwebJSButton.hidden = YES;
     }
     

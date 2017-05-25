@@ -77,8 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				6CB356491E233B64004460D6 /* HTML */,
-				6C29B3821E20A167009F6C6B /* Frameworks */,
 				6C29B35E1E209D77009F6C6B /* RXJavaScriptDemo */,
+				6C29B3821E20A167009F6C6B /* Frameworks */,
 				6C29B35D1E209D77009F6C6B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -179,6 +179,8 @@
 				TargetAttributes = {
 					6C29B35B1E209D77009F6C6B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = MLKY76PU29;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -343,10 +345,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MLKY76PU29;
 				INFOPLIST_FILE = RXJavaScriptDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RX.RXJavaScriptDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ghs.app.RXJavaScriptDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "528aa0c0-f569-4007-84d4-f5863b8ef1c0";
+				PROVISIONING_PROFILE_SPECIFIER = "GHS2016apps-Develop";
 			};
 			name = Debug;
 		};
@@ -354,10 +359,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MLKY76PU29;
 				INFOPLIST_FILE = RXJavaScriptDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RX.RXJavaScriptDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ghs.app.RXJavaScriptDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "528aa0c0-f569-4007-84d4-f5863b8ef1c0";
+				PROVISIONING_PROFILE_SPECIFIER = "GHS2016apps-Develop";
 			};
 			name = Release;
 		};

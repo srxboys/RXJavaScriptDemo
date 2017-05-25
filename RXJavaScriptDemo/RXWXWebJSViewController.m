@@ -23,6 +23,7 @@
 @interface RXWXWebJSViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 {
     WKWebView * _webView;
+    JSContext * _jsContext;
 }
 @end
 
@@ -36,6 +37,24 @@
 }
 
 - (void)configUI {
+    
+  
+    
+    //js代码
+//    NSString *js = @"var script = document.createElement('script');"
+//    "%@"
+//    "script.text = \" var app = {}; app.%@ = function() {};\";"
+//    //定义myFunction方法
+//    "document.getElementsByTagName('head')[0].appendChild(script);";
+    
+    NSString * scriptId = @"script.id = 'injectionJSEND';";
+    NSString * functionName = @"jumpPage";
+    
+    NSString * js = [NSString stringWithFormat:@"var script = document.createElement('script');"
+                           "%@"
+                           "script.text = \"var app = {}; app.%@ = function() {};  app.share =function() {};\";"
+                           //定义myFunction方法
+                           "document.getElementsByTagName('head')[0].appendChild(script);", scriptId,   functionName];
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc]init];
     // 设置偏好设置
@@ -54,10 +73,14 @@
     // 通过JS与webview内容交互
     config.userContentController = [[WKUserContentController alloc]init];
     
+    // 根据JS字符串初始化WKUserScript对象
+    WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    [config.userContentController addUserScript:script];
+    
     // 注入JS对象名称`share`，当JS通过`share`来调用时，
     // 我们可以在WKScriptMessageHandler代理中接收到
-    [config.userContentController addScriptMessageHandler:self name:@"share"];
     [config.userContentController addScriptMessageHandler:self name:@"loadHtml"];
+    [config.userContentController addScriptMessageHandler:self name:@"share"];
     
     _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, NavHeight, ScreenWidth, ScreenHeight - NavHeight) configuration:config];
     _webView.opaque = NO;
@@ -97,8 +120,34 @@
     
     // 显示html 源码
     [self printWebSouceCode];
+//
+    
+    
+//    _jsContext = [_webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+//    //定义好JS要调用的方法, share就是调用的share方法名
+//    [_webView evaluateJavaScript:@"documentView.webView.mainFrame.javaScriptContext" completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+//        NSLog(@"object=%@", object);
+//    }];
+    
+//    [self interceptJSFunction];
 }
 
+//拦截js方法
+- (void)interceptJSFunction {
+    //获取 app变量的share方法
+    //    weak(weakSelf);
+    JSValue * app = [_jsContext objectForKeyedSubscript:@"app"];
+    app[@"share"] = ^(id obj){
+        NSLog(@"share %@", obj);
+    };
+    app[@"jumpPage"] = ^(id className, id jsonString) {
+        NSLog(@"jumpPage %@=%@", className, jsonString);
+    };
+    app[@"sendSession"] = ^(id sessionId) {
+        NSString *string = [NSString stringWithFormat:@"%@",sessionId];
+        NSLog(@"sendSession %@", sessionId);
+    };
+}
 
 #pragma mark - WKScriptMessageHandler
 ///[config.userContentController addScriptMessageHandler:self name:@"share"];
@@ -107,7 +156,7 @@
     if ([message.name isEqualToString:@"share"]) {
         // 打印所传过来的参数，只支持NSNumber, NSString, NSDate, NSArray,
         // NSDictionary, and NSNull类型
-        NSLog(@"%@", message.body);
+        NSLog(@"do share ——> body=%@\n", message.body);
     }
     else if ([message.name isEqualToString:@"loadHtml"]) {
         // 当请求网址时就获取js
@@ -130,6 +179,40 @@
     }];
 }
 
+
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+    NSLog(@"\n alert========= \n");
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }])];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+    NSLog(@"\n ConfirmPanelWithMessage========= \n");
+    //    DLOG(@"msg = %@ frmae = %@",message,frame);
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:message?:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(NO);
+    }])];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(YES);
+    }])];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+    NSLog(@"\n TextInputPanel========= \n");
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.text = defaultText;
+    }];
+    [alertController addAction:([UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(alertController.textFields[0].text?:@"");
+    }])];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

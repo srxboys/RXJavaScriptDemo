@@ -5,7 +5,7 @@
         <title>iOS 往html里注入js,再去截取方法的调用</title>
         <!-- 这里是没有js方法的-->
         <!-- 需要app 去注入-->
-        <!-- WXWeb注入了，源码也是看不到的 -->
+        <!-- WXWeb注入了，源码看不到？？ -->
     </head>
     
     <body onload="loading()">
@@ -16,7 +16,21 @@
 
 <script type="text/javascript">
     function jsClick() {
-        window.webkit.messageHandlers.share.postMessage({body: 'call js confirm in js'});
+        //window.webkit.messageHandlers.share.postMessage({body: 'call js confirm in js'});
+        alert("您点击了");
+        if(app) {
+            if(app.share) {
+                app.share("dd");
+                alert("搞笑了");
+            }
+            else {
+                alert("fuck!!");
+            }
+        }
+        else {
+            alert("怎么回事");
+        }
+
     }
 </script>
 
@@ -25,6 +39,26 @@
 <!-- 当加载时执行 并app获取 -->
 <script type=text/javascript defer>
     function loading(){
-      window.webkit.messageHandlers.loadHtml.postMessage({body: '2222'});
+<!--      window.webkit.messageHandlers.loadHtml.postMessage({body: '2222'});-->
+      if(app) {
+          if(app.share) {
+              app.share("londing share");
+              window.webkit.messageHandlers.share.postMessage({body: 'londing share webkit'});
+<!--              alert("londing share");-->
+          }
+          else {
+<!--              alert("londing fuck!!  no no");-->
+          }
+      }
+      else {
+<!--          alert("what's fuck");-->
+      }
+
     }
 </script>
+
+<!--
+    当html 在加载时，注入js  ,,html加载完 立即本地调用 一些方法告诉app 干什么活
+    例子:
+        当加载html ，注入的js 是app 用户id ,,立即调用本地 看看是否登录，没有登录，立即调用方法告诉app 去登录
+ -->
