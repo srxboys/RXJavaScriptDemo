@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C0815A31F3C57D40079195D /* UIWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0815A11F3C57D40079195D /* UIWebViewViewController.m */; };
+		6C0815A61F3C57DF0079195D /* WKWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0815A41F3C57DF0079195D /* WKWebViewViewController.m */; };
+		6C0F4BCF1EF9064100F39753 /* RXWebRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0F4BCE1EF9064100F39753 /* RXWebRequestViewController.m */; };
 		6C29B3611E209D77009F6C6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B3601E209D77009F6C6B /* main.m */; };
 		6C29B3641E209D77009F6C6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B3631E209D77009F6C6B /* AppDelegate.m */; };
 		6C29B3671E209D77009F6C6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C29B3661E209D77009F6C6B /* ViewController.m */; };
@@ -22,14 +25,30 @@
 		6C793F581E4D90E800525B33 /* RXWXWebJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C793F571E4D90E800525B33 /* RXWXWebJSViewController.m */; };
 		6C793F5A1E4D910A00525B33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C793F591E4D910A00525B33 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6C793F5E1E4DA04F00525B33 /* RXWXWebHtml.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C793F5D1E4DA04F00525B33 /* RXWXWebHtml.html */; };
+		6C8D4B201F39A08C008D997C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D4B1F1F39A08B008D997C /* main.m */; };
+		6C8D4B231F39A08C008D997C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D4B221F39A08C008D997C /* AppDelegate.m */; };
+		6C8D4B261F39A08C008D997C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8D4B251F39A08C008D997C /* ViewController.m */; };
+		6C8D4B291F39A08C008D997C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8D4B271F39A08C008D997C /* Main.storyboard */; };
+		6C8D4B2B1F39A08C008D997C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C8D4B2A1F39A08C008D997C /* Assets.xcassets */; };
+		6C8D4B2E1F39A08C008D997C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8D4B2C1F39A08C008D997C /* LaunchScreen.storyboard */; };
+		6C8D4B371F39A468008D997C /* HTMLDocument.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C8D4B361F39A468008D997C /* HTMLDocument.html */; };
+		6C8D4B381F39A468008D997C /* HTMLDocument.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C8D4B361F39A468008D997C /* HTMLDocument.html */; };
 		6CB356471E233469004460D6 /* RXJSToHtmlBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB356461E233469004460D6 /* RXJSToHtmlBlockViewController.m */; };
 		6CB3564D1E233BEB004460D6 /* RXRequst.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3564C1E233BEB004460D6 /* RXRequst.html */; };
 		6CB3564F1E233BF9004460D6 /* RXJSToHtml.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB3564E1E233BF9004460D6 /* RXJSToHtml.html */; };
 		6CB356511E233C18004460D6 /* RXJSToHtmlBlock.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB356501E233C18004460D6 /* RXJSToHtmlBlock.html */; };
 		6CB356531E233C56004460D6 /* RXJS1HTML.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB356521E233C56004460D6 /* RXJS1HTML.html */; };
+		6CCB6C601F3B166F00953B72 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB6C5F1F3B166F00953B72 /* BasicViewController.m */; };
+		6CCB6C631F3B16D900953B72 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB6C621F3B16D900953B72 /* BaseNavViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C0815A11F3C57D40079195D /* UIWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWebViewViewController.m; sourceTree = "<group>"; };
+		6C0815A21F3C57D40079195D /* UIWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWebViewViewController.h; sourceTree = "<group>"; };
+		6C0815A41F3C57DF0079195D /* WKWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewViewController.m; sourceTree = "<group>"; };
+		6C0815A51F3C57DF0079195D /* WKWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewViewController.h; sourceTree = "<group>"; };
+		6C0F4BCD1EF9064100F39753 /* RXWebRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXWebRequestViewController.h; sourceTree = "<group>"; };
+		6C0F4BCE1EF9064100F39753 /* RXWebRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXWebRequestViewController.m; sourceTree = "<group>"; };
 		6C29B35C1E209D77009F6C6B /* RXJavaScriptDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXJavaScriptDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C29B3601E209D77009F6C6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C29B3621E209D77009F6C6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,12 +74,27 @@
 		6C793F571E4D90E800525B33 /* RXWXWebJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXWXWebJSViewController.m; sourceTree = "<group>"; };
 		6C793F591E4D910A00525B33 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6C793F5D1E4DA04F00525B33 /* RXWXWebHtml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXWXWebHtml.html; sourceTree = "<group>"; };
+		6C8D4B1C1F39A08B008D997C /* RXWeb_Content_ adapter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RXWeb_Content_ adapter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C8D4B1F1F39A08B008D997C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C8D4B211F39A08C008D997C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6C8D4B221F39A08C008D997C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6C8D4B241F39A08C008D997C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6C8D4B251F39A08C008D997C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6C8D4B281F39A08C008D997C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6C8D4B2A1F39A08C008D997C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C8D4B2D1F39A08C008D997C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6C8D4B2F1F39A08C008D997C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C8D4B361F39A468008D997C /* HTMLDocument.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HTMLDocument.html; sourceTree = "<group>"; };
 		6CB356451E233469004460D6 /* RXJSToHtmlBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXJSToHtmlBlockViewController.h; sourceTree = "<group>"; };
 		6CB356461E233469004460D6 /* RXJSToHtmlBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXJSToHtmlBlockViewController.m; sourceTree = "<group>"; };
 		6CB3564C1E233BEB004460D6 /* RXRequst.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXRequst.html; sourceTree = "<group>"; };
 		6CB3564E1E233BF9004460D6 /* RXJSToHtml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXJSToHtml.html; sourceTree = "<group>"; };
 		6CB356501E233C18004460D6 /* RXJSToHtmlBlock.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXJSToHtmlBlock.html; sourceTree = "<group>"; };
 		6CB356521E233C56004460D6 /* RXJS1HTML.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RXJS1HTML.html; sourceTree = "<group>"; };
+		6CCB6C5E1F3B166F00953B72 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
+		6CCB6C5F1F3B166F00953B72 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
+		6CCB6C611F3B16D900953B72 /* BaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
+		6CCB6C621F3B16D900953B72 /* BaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +107,72 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6C8D4B191F39A08B008D997C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C0815981F3C573D0079195D /* UIWebView */ = {
+			isa = PBXGroup;
+			children = (
+				6C08159A1F3C573D0079195D /* 正常加载本地html */,
+				6C0815991F3C573D0079195D /* 区域内加载本地html */,
+			);
+			path = UIWebView;
+			sourceTree = "<group>";
+		};
+		6C0815991F3C573D0079195D /* 区域内加载本地html */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "区域内加载本地html";
+			sourceTree = "<group>";
+		};
+		6C08159A1F3C573D0079195D /* 正常加载本地html */ = {
+			isa = PBXGroup;
+			children = (
+				6C0815A21F3C57D40079195D /* UIWebViewViewController.h */,
+				6C0815A11F3C57D40079195D /* UIWebViewViewController.m */,
+			);
+			path = "正常加载本地html";
+			sourceTree = "<group>";
+		};
+		6C08159B1F3C573D0079195D /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				6C08159D1F3C573D0079195D /* 正常加载本地html */,
+				6C08159C1F3C573D0079195D /* 区域内加载本地html */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
+		6C08159C1F3C573D0079195D /* 区域内加载本地html */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "区域内加载本地html";
+			sourceTree = "<group>";
+		};
+		6C08159D1F3C573D0079195D /* 正常加载本地html */ = {
+			isa = PBXGroup;
+			children = (
+				6C0815A51F3C57DF0079195D /* WKWebViewViewController.h */,
+				6C0815A41F3C57DF0079195D /* WKWebViewViewController.m */,
+			);
+			path = "正常加载本地html";
+			sourceTree = "<group>";
+		};
 		6C29B3531E209D77009F6C6B = {
 			isa = PBXGroup;
 			children = (
 				6CB356491E233B64004460D6 /* HTML */,
 				6C29B35E1E209D77009F6C6B /* RXJavaScriptDemo */,
+				6C8D4B1D1F39A08B008D997C /* RXWeb_Content_ adapter */,
 				6C29B3821E20A167009F6C6B /* Frameworks */,
 				6C29B35D1E209D77009F6C6B /* Products */,
 			);
@@ -90,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				6C29B35C1E209D77009F6C6B /* RXJavaScriptDemo.app */,
+				6C8D4B1C1F39A08B008D997C /* RXWeb_Content_ adapter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +208,8 @@
 				6CB356461E233469004460D6 /* RXJSToHtmlBlockViewController.m */,
 				6C793F561E4D90E800525B33 /* RXWXWebJSViewController.h */,
 				6C793F571E4D90E800525B33 /* RXWXWebJSViewController.m */,
+				6C0F4BCD1EF9064100F39753 /* RXWebRequestViewController.h */,
+				6C0F4BCE1EF9064100F39753 /* RXWebRequestViewController.m */,
 				6C29B36B1E209D77009F6C6B /* Assets.xcassets */,
 				6C29B36D1E209D77009F6C6B /* LaunchScreen.storyboard */,
 				6C29B3701E209D77009F6C6B /* Info.plist */,
@@ -149,6 +244,36 @@
 			path = webViewExtension;
 			sourceTree = "<group>";
 		};
+		6C8D4B1D1F39A08B008D997C /* RXWeb_Content_ adapter */ = {
+			isa = PBXGroup;
+			children = (
+				6C0815981F3C573D0079195D /* UIWebView */,
+				6C08159B1F3C573D0079195D /* WKWebView */,
+				6C8D4B211F39A08C008D997C /* AppDelegate.h */,
+				6C8D4B221F39A08C008D997C /* AppDelegate.m */,
+				6CCB6C5E1F3B166F00953B72 /* BasicViewController.h */,
+				6CCB6C5F1F3B166F00953B72 /* BasicViewController.m */,
+				6CCB6C611F3B16D900953B72 /* BaseNavViewController.h */,
+				6CCB6C621F3B16D900953B72 /* BaseNavViewController.m */,
+				6C8D4B241F39A08C008D997C /* ViewController.h */,
+				6C8D4B251F39A08C008D997C /* ViewController.m */,
+				6C8D4B271F39A08C008D997C /* Main.storyboard */,
+				6C8D4B2A1F39A08C008D997C /* Assets.xcassets */,
+				6C8D4B2C1F39A08C008D997C /* LaunchScreen.storyboard */,
+				6C8D4B2F1F39A08C008D997C /* Info.plist */,
+				6C8D4B1E1F39A08B008D997C /* Supporting Files */,
+			);
+			path = "RXWeb_Content_ adapter";
+			sourceTree = "<group>";
+		};
+		6C8D4B1E1F39A08B008D997C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C8D4B1F1F39A08B008D997C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6CB356491E233B64004460D6 /* HTML */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +282,7 @@
 				6CB3564E1E233BF9004460D6 /* RXJSToHtml.html */,
 				6CB356501E233C18004460D6 /* RXJSToHtmlBlock.html */,
 				6C793F5D1E4DA04F00525B33 /* RXWXWebHtml.html */,
+				6C8D4B361F39A468008D997C /* HTMLDocument.html */,
 			);
 			path = HTML;
 			sourceTree = "<group>";
@@ -181,6 +307,23 @@
 			productReference = 6C29B35C1E209D77009F6C6B /* RXJavaScriptDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6C8D4B1B1F39A08B008D997C /* RXWeb_Content_ adapter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C8D4B321F39A08C008D997C /* Build configuration list for PBXNativeTarget "RXWeb_Content_ adapter" */;
+			buildPhases = (
+				6C8D4B181F39A08B008D997C /* Sources */,
+				6C8D4B191F39A08B008D997C /* Frameworks */,
+				6C8D4B1A1F39A08B008D997C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RXWeb_Content_ adapter";
+			productName = "RXWeb_Content_ adapter";
+			productReference = 6C8D4B1C1F39A08B008D997C /* RXWeb_Content_ adapter.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,6 +337,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = MLKY76PU29;
 						ProvisioningStyle = Manual;
+					};
+					6C8D4B1B1F39A08B008D997C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = PV5ANGHDB3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -211,6 +359,7 @@
 			projectRoot = "";
 			targets = (
 				6C29B35B1E209D77009F6C6B /* RXJavaScriptDemo */,
+				6C8D4B1B1F39A08B008D997C /* RXWeb_Content_ adapter */,
 			);
 		};
 /* End PBXProject section */
@@ -221,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C29B36F1E209D77009F6C6B /* LaunchScreen.storyboard in Resources */,
+				6C8D4B371F39A468008D997C /* HTMLDocument.html in Resources */,
 				6C29B36C1E209D77009F6C6B /* Assets.xcassets in Resources */,
 				6CB3564D1E233BEB004460D6 /* RXRequst.html in Resources */,
 				6CB3564F1E233BF9004460D6 /* RXJSToHtml.html in Resources */,
@@ -228,6 +378,17 @@
 				6CB356531E233C56004460D6 /* RXJS1HTML.html in Resources */,
 				6CB356511E233C18004460D6 /* RXJSToHtmlBlock.html in Resources */,
 				6C793F5E1E4DA04F00525B33 /* RXWXWebHtml.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C8D4B1A1F39A08B008D997C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C8D4B381F39A468008D997C /* HTMLDocument.html in Resources */,
+				6C8D4B2E1F39A08C008D997C /* LaunchScreen.storyboard in Resources */,
+				6C8D4B2B1F39A08C008D997C /* Assets.xcassets in Resources */,
+				6C8D4B291F39A08C008D997C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,10 +405,25 @@
 				6C29B3641E209D77009F6C6B /* AppDelegate.m in Sources */,
 				6CB356471E233469004460D6 /* RXJSToHtmlBlockViewController.m in Sources */,
 				6C29B3611E209D77009F6C6B /* main.m in Sources */,
+				6C0F4BCF1EF9064100F39753 /* RXWebRequestViewController.m in Sources */,
 				6C6F3FEF1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.m in Sources */,
 				6C29B3781E209DAB009F6C6B /* RXJS1ViewController.m in Sources */,
 				6C29B37B1E209DDA009F6C6B /* RXRequstHtmlViewController.m in Sources */,
 				6C29B3811E209E1C009F6C6B /* RXWebViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C8D4B181F39A08B008D997C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C8D4B261F39A08C008D997C /* ViewController.m in Sources */,
+				6C8D4B231F39A08C008D997C /* AppDelegate.m in Sources */,
+				6C8D4B201F39A08C008D997C /* main.m in Sources */,
+				6CCB6C601F3B166F00953B72 /* BasicViewController.m in Sources */,
+				6CCB6C631F3B16D900953B72 /* BaseNavViewController.m in Sources */,
+				6C0815A61F3C57DF0079195D /* WKWebViewViewController.m in Sources */,
+				6C0815A31F3C57D40079195D /* UIWebViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +442,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C29B36E1E209D77009F6C6B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6C8D4B271F39A08C008D997C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C8D4B281F39A08C008D997C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6C8D4B2C1F39A08C008D997C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C8D4B2D1F39A08C008D997C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -383,6 +575,40 @@
 			};
 			name = Release;
 		};
+		6C8D4B301F39A08C008D997C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = PV5ANGHDB3;
+				INFOPLIST_FILE = "RXWeb_Content_ adapter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ghs.app.RXWeb-Content--adapter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6C8D4B311F39A08C008D997C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = PV5ANGHDB3;
+				INFOPLIST_FILE = "RXWeb_Content_ adapter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ghs.app.RXWeb-Content--adapter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,6 +626,15 @@
 			buildConfigurations = (
 				6C29B3741E209D77009F6C6B /* Debug */,
 				6C29B3751E209D77009F6C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C8D4B321F39A08C008D997C /* Build configuration list for PBXNativeTarget "RXWeb_Content_ adapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C8D4B301F39A08C008D997C /* Debug */,
+				6C8D4B311F39A08C008D997C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

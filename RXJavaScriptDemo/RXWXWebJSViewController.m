@@ -90,7 +90,8 @@
     _webView.navigationDelegate = self;
     [self.view addSubview:_webView];
     
-    NSString * htmlPath = [[NSBundle mainBundle] pathForResource:@"RXWXWebHtml" ofType:@"html"];NSString * htmlCont = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];    // 获取当前应用的根目录
+    NSString * htmlPath = [[NSBundle mainBundle] pathForResource:@"RXWXWebHtml" ofType:@"html"];
+    NSString * htmlCont = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];    // 获取当前应用的根目录
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     // 通过baseURL的方式加载的HTML

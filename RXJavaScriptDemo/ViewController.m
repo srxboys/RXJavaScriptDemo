@@ -20,6 +20,7 @@
 #import "RXJSToHtmlViewController.h"
 #import "RXJSToHtmlBlockViewController.h"
 #import "RXWXWebJSViewController.h"
+#import "RXWebRequestViewController.h"
 
 @interface ViewController ()
 
@@ -92,7 +93,8 @@
 }
 
 - (IBAction)wkwebJSButtonClick:(id)sender {
-    RXWXWebJSViewController * five = [[RXWXWebJSViewController alloc] init];
-    [self.navigationController pushViewController:five animated:YES];
+//    RXWXWebJSViewController * five = [[RXWXWebJSViewController alloc] init];
+    RXWebRequestViewController * webdd = [[RXWebRequestViewController alloc] init];
+    [self.navigationController pushViewController:webdd animated:YES];
 }
 @end

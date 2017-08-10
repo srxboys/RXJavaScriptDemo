@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yxV-0m-rIP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yxV-0m-rIP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="CQG-jh-WdE">
             <objects>
                 <navigationController id="yxV-0m-rIP" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="frq-yX-Bmb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -20,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ll2-cv-kZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-870" y="199"/>
+            <point key="canvasLocation" x="-999" y="198"/>
         </scene>
         <!--iOS <-> js-->
         <scene sceneID="tne-QT-ifu">
@@ -31,12 +34,12 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVq-rI-GvI">
-                                <rect key="frame" x="24" y="81" width="272" height="75"/>
-                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="51.5" y="81" width="272" height="75"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="hEc-NI-hmQ"/>
                                     <constraint firstAttribute="width" constant="272" id="x21-G2-bfO"/>
@@ -47,8 +50,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwn-fm-fd3">
-                                <rect key="frame" x="24" y="164" width="272" height="84"/>
-                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="51.5" y="164" width="272" height="84"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="HVz-Lc-mnt"/>
                                     <constraint firstAttribute="width" constant="272" id="agj-Ed-IMK"/>
@@ -59,8 +62,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-sz-xn4">
-                                <rect key="frame" x="24" y="256" width="272" height="84"/>
-                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="51.5" y="256" width="272" height="84"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="ZXO-uV-mpl"/>
                                     <constraint firstAttribute="width" constant="272" id="ao7-ER-Foq"/>
@@ -71,8 +74,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaw-Ug-yO9">
-                                <rect key="frame" x="24" y="354" width="272" height="84"/>
-                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="51.5" y="354" width="272" height="84"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="272" id="dGq-Eh-62X"/>
                                     <constraint firstAttribute="height" constant="84" id="rD5-oc-6l9"/>
@@ -83,8 +86,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-PV-Q7m">
-                                <rect key="frame" x="24" y="453" width="272" height="20"/>
-                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="51.5" y="453" width="272" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.88588445059999998" blue="0.93968066640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="272" id="Lok-Iw-Qji"/>
                                     <constraint firstAttribute="height" constant="20" id="e60-M2-5pT"/>
@@ -95,7 +98,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vw3-PV-Q7m" firstAttribute="top" secondItem="qaw-Ug-yO9" secondAttribute="bottom" constant="15" id="2IX-jg-vIm"/>
                             <constraint firstItem="LTJ-sz-xn4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ibf-Oq-hoT"/>
@@ -110,7 +113,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="iOS &lt;-&gt; js" id="KJh-I3-Qwv"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addJSAndBlockButton" destination="qaw-Ug-yO9" id="Wud-eO-doA"/>
                         <outlet property="addJSAndInterceptButton" destination="LTJ-sz-xn4" id="gjv-Le-85i"/>
@@ -121,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-496" y="199"/>
+            <point key="canvasLocation" x="-226" y="198"/>
         </scene>
     </scenes>
 </document>
