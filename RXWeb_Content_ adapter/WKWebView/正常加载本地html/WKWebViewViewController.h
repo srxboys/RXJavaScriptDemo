@@ -11,11 +11,6 @@
 
 #define __RX_ADD_JS(str)  @#str
 
-#define __RX_ADD_JSContent(_content) [NSString stringWithFormat:@"var script = document.createElement('script');" \
-"script.type = 'text/javascript';" \
-"script.text = \"%@\";" \
-"document.getElementsByTagName('head')[0].appendChild(script);", _content]
-
 @interface WKWebViewViewController : BasicViewController
 @property (nonatomic, copy) NSString * htmlPath;
 @property (nonatomic, copy) NSURL * baseURL;

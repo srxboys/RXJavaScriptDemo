@@ -16,12 +16,9 @@
 #import "RXClickPicWithJSController.h"
 
 #import "UIWebView+TS_JavaScriptContext.h"
-#import <JavaScriptCore/JavaScriptCore.h>
 
 @interface RXClickPicWithJSController ()
-{
-    JSContext * _jsContext;
-}
+
 @end
 
 @implementation RXClickPicWithJSController
@@ -49,19 +46,9 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [super webViewDidFinishLoad:webView];
-    _jsContext = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    _jsContext[@"getImages"] = ^(id obj) {
-        NSLog(@"%@", obj);
-    };
     [self addJavaScript];
     [self addJSAlterPrint];
 }
-
-#define __RX_ADD_JS(str)  @#str
-#define __RX_ADD_JSContent(_content) [NSString stringWithFormat:@"var script = document.createElement('script');" \
-"script.type = 'text/javascript';" \
-"script.text = \"%@\";" \
-"document.getElementsByTagName('head')[0].appendChild(script);", _content]
 
 - (void)addJavaScript{
     NSString * jsString = __RX_ADD_JS(

@@ -43,14 +43,21 @@
 }
 
 - (void)addJavaScriptName:(NSString *)functionName {
-    
+    /*
     NSString * jsString = [NSString stringWithFormat:@"var script = document.createElement('script');"
                            "script.type = 'text/javascript';"
                            "script.text = \"var app = {}; app.%@ = function() {};\";"
                            "document.getElementsByTagName('head')[0].appendChild(script);", functionName];
     
     [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+     */
+    NSString * jsString2 = __RX_ADD_JS(
+                                       var app = {};
+                                       app.%@ = function() {};
+                                       );
     
+    jsString2 = [NSString stringWithFormat:jsString2, functionName];
+    [self.webView stringByEvaluatingJavaScriptFromString:__RX_ADD_JSContent(jsString2)];
 }
 
 

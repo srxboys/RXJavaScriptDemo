@@ -101,6 +101,23 @@
         "}"
     "}\";"
     "document.getElementsByTagName('head')[0].appendChild(script);";
+/*
+ 方便写法
+    NSString *js2 = __RX_ADD_JS(
+            function ResizeImages() {
+                var myimg,oldwidth;
+                var maxwidth = %f;
+                for(i=0;i <document.images.length;i++){
+                    myimg = document.images[i];
+                    if(myimg.width != maxwidth){
+                        oldwidth = myimg.width;
+                        myimg.width = %f;
+                    }
+                }
+            };
+    );
+     js2 = __RX_ADD_JSContent(js2);
+*/
     js=[NSString stringWithFormat:js,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-15];
     [_webView stringByEvaluatingJavaScriptFromString:js];
     [_webView stringByEvaluatingJavaScriptFromString:@"ResizeImages();"];

@@ -58,13 +58,22 @@
 
 - (void)addJavaScriptName:(NSString *)functionName {
     
+    /*
     NSString * jsString = [NSString stringWithFormat:@"var script = document.createElement('script');"
                            "script.type = 'text/javascript';"
                            "script.text = \"var app = {}; app.%@ = function() {};\";"
                            //定义myFunction方法
                            "document.getElementsByTagName('head')[0].appendChild(script);", functionName];
-    
     [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+    */
+    
+    NSString * jsString2 = __RX_ADD_JS(
+                                       var app = {};
+                                       app.%@ = function() {};
+                                       );
+    
+    jsString2 = [NSString stringWithFormat:jsString2, functionName];
+    [self.webView stringByEvaluatingJavaScriptFromString:__RX_ADD_JSContent(jsString2)];
     
     //iOS app 去掉用js html里的js方法(一般不用)
 //    NSString * jsFunction = [NSString stringWithFormat:@"%@();", functionName];
@@ -90,13 +99,23 @@
     if(isLastInjection) {
         scriptId = @"script.id = 'injectionJSEND';";
     }
-    
+    /*
     NSString * jsString = [NSString stringWithFormat:@"var script = document.createElement('script');"
                            "%@"
                            "script.text = \"app.%@ = function() {};\";"
                            //定义myFunction方法
                            "document.getElementsByTagName('head')[0].appendChild(script);", scriptId,   functionName];
     [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+    */
+    
+    NSString * jsString2 = __RX_ADD_JS(
+                                       %@;
+                                       var app = {};
+                                       app.%@ = function() {};
+                                       );
+    
+    jsString2 = [NSString stringWithFormat:jsString2, scriptId, functionName];
+    [self.webView stringByEvaluatingJavaScriptFromString:__RX_ADD_JSContent(jsString2)];
     
     //iOS app 去掉用js html里的js方法(一般不用)
     //    NSString * jsFunction = [NSString stringWithFormat:@"%@();", functionName];
