@@ -40,6 +40,7 @@
 		6CB356531E233C56004460D6 /* RXJS1HTML.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CB356521E233C56004460D6 /* RXJS1HTML.html */; };
 		6CCB6C601F3B166F00953B72 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB6C5F1F3B166F00953B72 /* BasicViewController.m */; };
 		6CCB6C631F3B16D900953B72 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB6C621F3B16D900953B72 /* BaseNavViewController.m */; };
+		B870836A201981CA00DA2E17 /* RXClickPicWithJSController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8708369201981CA00DA2E17 /* RXClickPicWithJSController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,8 @@
 		6CCB6C5F1F3B166F00953B72 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		6CCB6C611F3B16D900953B72 /* BaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
 		6CCB6C621F3B16D900953B72 /* BaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
+		B8708368201981CA00DA2E17 /* RXClickPicWithJSController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RXClickPicWithJSController.h; sourceTree = "<group>"; };
+		B8708369201981CA00DA2E17 /* RXClickPicWithJSController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXClickPicWithJSController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 				6C29B37D1E209DF0009F6C6B /* RXJSToHtmlViewController.m */,
 				6CB356451E233469004460D6 /* RXJSToHtmlBlockViewController.h */,
 				6CB356461E233469004460D6 /* RXJSToHtmlBlockViewController.m */,
+				B8708368201981CA00DA2E17 /* RXClickPicWithJSController.h */,
+				B8708369201981CA00DA2E17 /* RXClickPicWithJSController.m */,
 				6C793F561E4D90E800525B33 /* RXWXWebJSViewController.h */,
 				6C793F571E4D90E800525B33 /* RXWXWebJSViewController.m */,
 				6C0F4BCD1EF9064100F39753 /* RXWebRequestViewController.h */,
@@ -407,6 +412,7 @@
 				6C29B3611E209D77009F6C6B /* main.m in Sources */,
 				6C0F4BCF1EF9064100F39753 /* RXWebRequestViewController.m in Sources */,
 				6C6F3FEF1ED67CA0006F9B9E /* UIWebView+TS_JavaScriptContext.m in Sources */,
+				B870836A201981CA00DA2E17 /* RXClickPicWithJSController.m in Sources */,
 				6C29B3781E209DAB009F6C6B /* RXJS1ViewController.m in Sources */,
 				6C29B37B1E209DDA009F6C6B /* RXRequstHtmlViewController.m in Sources */,
 				6C29B3811E209E1C009F6C6B /* RXWebViewController.m in Sources */,

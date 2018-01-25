@@ -5,21 +5,37 @@
 //  Created by srx on 2017/1/7.
 //  Copyright © 2017年 https://github.com/srxboys. All rights reserved.
 //
-
 #import "RXWebViewController.h"
 
 @interface RXWebViewController ()
+@property (nonatomic, assign) HTMLType type;
 @property (nonatomic, copy) UITextView * openCodeTextView;
 @property (nonatomic, copy) UITextView * endCodeTextView;
 @end
 
 @implementation RXWebViewController
 
+- (void)popViewController {
+    if(self.webView.canGoBack) {
+        [self.webView goBack];
+    }
+    else {
+        if(![self.webView.request.URL.scheme isEqualToString:@"file"]) {
+            [self settingHtmlLocalCodeWithType:self.type];
+        }
+        else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     
+    NAV_VIEW_ADD_LEFT_BUTTON(@"返回", @selector(popViewController));
+    NAV_VIEW_ADD_RIGHT_BUTTON(@"显示/隐藏", @selector(rightBarButtonClick:));
     
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, NavHeight, ScreenWidth, ScreenHeight - NavHeight)];
     _webView.scalesPageToFit = YES;
@@ -69,6 +85,18 @@
     [self.view addSubview:_endCodeTextView];
 }
 
+- (void)rightBarButtonClick:(UIButton *)btn {
+    if(!btn.isSelected) {
+        _openCodeTextView.hidden = YES;
+        _endCodeTextView.hidden = YES;
+    }
+    else {
+        _openCodeTextView.hidden = NO;
+        _endCodeTextView.hidden = NO;
+    }
+    btn.selected = !btn.isSelected;
+}
+
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     //开始加载
     NSLog(@"开始加载");
@@ -98,6 +126,7 @@
 
 #pragma mark - ~~~~~~~~~~~ /// 设置加载本地哪个html ~~~~~~~~~~~~~~~
 - (void)settingHtmlLocalCodeWithType:(HTMLType)type {
+    self.type = type;
     NSString * htmlCode = @"";
     if(type == HTMLTypeOne) {
         htmlCode = @"RXJS1HTML";
@@ -108,8 +137,14 @@
     else if(type == HTMLTypeThree) {
         htmlCode = @"RXJSToHtml";
     }
-    else {
+    else if(type == HTMLTypeForth){
         htmlCode = @"RXJSToHtmlBlock";
+    }
+    else if(type == HTMLTypeFive){
+        htmlCode = @"RXWXWebHtml";
+    }
+    else if(type == HTMLTypeSix){
+        htmlCode = @"HTMLDocument";
     }
     
     NSString * htmlPath = [[NSBundle mainBundle] pathForResource:htmlCode ofType:@"html"];NSString * htmlCont = [NSString stringWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];    // 获取当前应用的根目录

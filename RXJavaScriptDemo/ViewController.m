@@ -22,6 +22,8 @@
 #import "RXWXWebJSViewController.h"
 #import "RXWebRequestViewController.h"
 
+#import "RXClickPicWithJSController.h"
+
 @interface ViewController ()
 
 ///iOS 拦截js function
@@ -72,29 +74,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#define RXClass(vc_class) [vc_class class]
+
+- (void)push:(Class)className {
+    UIViewController * vc = [className new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (IBAction)interceptJSButtonClick:(id)sender {
-    RXJS1ViewController * one = [[RXJS1ViewController alloc] init];
-    [self.navigationController pushViewController:one animated:YES];
+    [self push:RXClass(RXJS1ViewController)];
 }
 
 - (IBAction)htmlDelegateButtonClick:(id)sender {
-    RXRequstHtmlViewController * two = [[RXRequstHtmlViewController alloc] init];
-    [self.navigationController pushViewController:two animated:YES];
+    [self push:RXClass(RXRequstHtmlViewController)];
 }
 
 - (IBAction)addJSAndInterceptButton:(id)sender {
-    RXJSToHtmlViewController * three = [[RXJSToHtmlViewController alloc] init];
-    [self.navigationController pushViewController:three animated:YES];
+    [self push:RXClass(RXJSToHtmlViewController)];
 }
 
 - (IBAction)addJSAndBlockButtonClick:(id)sender {
-    RXJSToHtmlBlockViewController * fouth = [[RXJSToHtmlBlockViewController alloc] init];
-    [self.navigationController pushViewController:fouth animated:YES];
+    [self push:RXClass(RXJSToHtmlBlockViewController)];
 }
 
 - (IBAction)wkwebJSButtonClick:(id)sender {
 //    RXWXWebJSViewController * five = [[RXWXWebJSViewController alloc] init];
-    RXWebRequestViewController * webdd = [[RXWebRequestViewController alloc] init];
-    [self.navigationController pushViewController:webdd animated:YES];
+//    RXWebRequestViewController * webdd = [[RXWebRequestViewController alloc] init];
+    
+//    [self push:RXClass(RXWebRequestViewController)];
+//    [self push:RXClass(RXWXWebJSViewController)];
+    [self push:RXClass(RXClickPicWithJSController)];
 }
+
 @end

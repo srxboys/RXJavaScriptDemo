@@ -18,11 +18,33 @@
 #define NavHeight     64
 #define TabbarHeight  49
 
+#define NAV_VIEW_ADD_RIGHT_BUTTON(__title, __action)  NAV_VIEW_ADD_BAR_BUTTON(self, __title, __action, NO)
+#define NAV_VIEW_ADD_LEFT_BUTTON(__title, __action)  NAV_VIEW_ADD_BAR_BUTTON(self, __title, __action, YES)
+
+#define NAV_VIEW_ADD_BAR_BUTTON(__target, __title, __action, __isLeft) \
+do { \
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom]; \
+    [btn setTitle:__title forState:UIControlStateNormal]; \
+    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];\
+    btn.frame = CGRectMake(0, 0, 80, 70);\
+    [btn addTarget:__target action:__action forControlEvents:UIControlEventTouchUpInside]; \
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:btn]; \
+    if(__isLeft) { \
+        __target.navigationItem.leftBarButtonItem = item; \
+    } \
+    else { \
+        __target.navigationItem.rightBarButtonItem = item; \
+    } \
+} while (0)
+
+
 typedef NS_ENUM(NSInteger, HTMLType) {
     HTMLTypeOne,
     HTMLTypeTwo,
     HTMLTypeThree,
-    HTMLTypeForth
+    HTMLTypeForth,
+    HTMLTypeFive,
+    HTMLTypeSix
 };
 
 

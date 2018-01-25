@@ -61,7 +61,7 @@
     
     CGFloat width = 272;
     CGFloat height = 75;
-    CGFloat top = 81;
+    CGFloat top = 100;
     
     
     CGSize size = [UIApplication sharedApplication].keyWindow.bounds.size;
